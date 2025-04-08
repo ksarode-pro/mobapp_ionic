@@ -1,0 +1,45 @@
+📦 Initial Setup Commands
+Command:	
+npm install @capacitor/core @capacitor/cli	
+Explanation:
+Installs Capacitor core and CLI tools to your Angular project. Required to use Capacitor features.
+
+Command:	
+npx cap init	
+Explanation:
+Initializes Capacitor. You'll be asked for an app name and ID (e.g., com.mycompany.app). Creates capacitor.config.ts.
+
+🧱 Adding Platforms
+Command:	
+npx cap add android	
+Explaination:	
+Adds the Android project folder (/android). Needed to run the app on Android.
+
+Command:	
+npx cap add ios	
+Explaination:	
+Adds the iOS project folder (/ios). Needed only if you want to build for iOS.
+
+🏗️ Building the Angular App
+Command	                                Explanation
+ng build --configuration production	    Builds your Angular app in production mode. Outputs files to dist/your-app-name.
+ng serve	                            Serves the app in the browser for testing/debugging. Not used for Android builds.
+
+🔄 Syncing Angular App with Capacitor
+Command	                Explanation
+npx cap copy android	Copies the latest Angular build (dist/) into the Android project’s web assets folder. Must be run after every ng build.
+npx cap sync android	Syncs native plugins and updates Capacitor configuration. Runs copy and plugin updates together.
+
+🧪 Running and Testing on Device/Emulator
+Command	                Explanation
+npx cap open android	Opens the Android project in Android Studio. From there, you can build and run the app.
+
+🧹 Cleanup or Reset
+Command	                    Explanation
+npx cap remove android	    Removes the Android platform. Use this if your Android project is broken and needs to be re-created.
+npx cap add android	        Re-adds the Android platform after removal. Regenerates the /android folder.
+
+🔧 Optional / Plugin Related
+Command	                                    Explanation
+npm install @capacitor/push-notifications	Installs Capacitor Push Notifications plugin. Needed for FCM integration.
+npx cap update	                            Updates the native Android/iOS projects with changes from package.json or updated Capacitor versions.

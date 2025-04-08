@@ -1,0 +1,17 @@
+# 1. Install Capacitor
+npm install @capacitor/core @capacitor/cli
+
+# 2. Init Capacitor
+npx cap init
+
+# 3. Add Android platform
+npx cap add android
+
+# 4. Build Angular App
+ng build --configuration production
+
+# 5. Copy web build to Android
+npx cap copy android
+
+# 6. Open Android Studio
+npx cap open android
